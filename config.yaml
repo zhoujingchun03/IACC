@@ -1,0 +1,36 @@
+data:
+  num_workers: 1
+  pin_memory: true
+  train_batch_size:
+  - 8
+  - 2
+  - 8
+  train_img_size:
+  - 256
+  - 512
+  - 256
+
+  train_path:
+  valid_path:
+
+optim:
+  cycle_decay: 0.5
+  lr_init: 0.00015
+  lr_min: 1.0e-6
+  use_cycle_limit: false
+  warmup_epochs: 20
+  weight_decay: 1.0e-6
+train:
+  ckpt_name: last
+  device: cuda
+  model_name: IACC
+  resume: true
+  save_dir: ./log
+  seed: 0
+  stage_epochs:
+  - 150
+  - 30
+  - 20
+  task_name: base
+  use_amp: False
+  valid_frequency: 1
